@@ -1,0 +1,14 @@
+ {
+       "domains": {
+             "city": ["Galati","Iasi","Timisoara","Bacau","Craiova","Giurgiu"],
+		 "direction": ["N","S","E","V","NV","NE","SE","SV"],
+             "rain":[0,100],
+             "wind":[0,150],
+             "stationId":[1,240],
+             "temp":[-20,35],
+             "date":[1800,2021,1,12]
+             
+             
+        }
+        
+    }
