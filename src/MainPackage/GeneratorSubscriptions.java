@@ -41,7 +41,7 @@ public class GeneratorSubscriptions {
 				if(req.distribution.contains(i)) { atomicSubscriptionts.add(generateAtomicSubscription( i,req));}
 				
 			}
-			System.out.println(completeSubscription(atomicSubscriptionts));		
+			//System.out.println(completeSubscription(atomicSubscriptionts));		
 			String subscription=completeSubscription(atomicSubscriptionts).toString();
 			
 			
@@ -70,7 +70,8 @@ public class GeneratorSubscriptions {
 		 int maxfields=GeneratorRandomAtomicSubscription.FIELDS.length-atomicSubscriptionts.size();
 		 int c=0;
 		 if(maxfields!=0)
-		 c=random.nextInt(maxfields);
+		 c=1+random.nextInt(maxfields-1);
+		 // c=random.nextInt(maxfields);
 		 System.out.println("c="+c);
 		for (int i=0;i<c;i++) {
 			AtomicSubscription atom=GeneratorRandomAtomicSubscription.generate(atomicSubscriptionts,requirements);

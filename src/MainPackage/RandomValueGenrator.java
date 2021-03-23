@@ -1,5 +1,6 @@
 package MainPackage;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
@@ -78,7 +79,7 @@ public class RandomValueGenrator {
 
 
 
-	public Date genDate(int minYear,int maxYear,int minMounth,int maxMounth) {
+	public LocalDate genDate(int minYear,int maxYear,int minMounth,int maxMounth) {
 		int year=random.nextInt(maxYear-minYear+1)+minYear;
 		int mounth=random.nextInt(maxMounth-minMounth+1)+minMounth;
 		
@@ -89,7 +90,7 @@ public class RandomValueGenrator {
 		maxDay=mount_day.get(mounth);
 		}
 		int day=random.nextInt(maxDay)+1;
-		return new Date(year, mounth, day);
+		return LocalDate.of(year, mounth, day);
 		
 		
 	}

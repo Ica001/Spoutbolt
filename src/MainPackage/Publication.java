@@ -1,5 +1,6 @@
 package MainPackage;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
@@ -11,7 +12,7 @@ public class Publication {
 	private float rain;
 	private int wind;
 	private String direction;
-	private Date date;
+	private LocalDate date;
 	
 
 	
@@ -57,7 +58,7 @@ public class Publication {
 
 
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
@@ -99,7 +100,7 @@ public class Publication {
 
 
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
@@ -108,7 +109,7 @@ public class Publication {
 	@Override
 	public String toString() {
 		return "Publication [stationId=" + stationId + ", city=" + city + ", temp=" + temp + ", rain=" + rain
-				+ ", wind=" + wind + ", direction=" + direction + ", date=" + date.getDay() +"-"+date.getMonth()+"-"+date.getYear()+ "]";
+				+ ", wind=" + wind + ", direction=" + direction + ", date="+date.toString() +" ]";
 	}
 	
   
