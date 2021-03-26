@@ -6,19 +6,29 @@ import java.util.Random;
 public class UniqRandoms {
  
 	public static void loadUniqRandoms(ArrayList<Integer> output,int size,int n) {
-		int[] a=new int[n];
-		for(int i=0;i<n;i++) {
-			a[i]=i;
+		ArrayList<Integer> availablePositions=GeneratorSubscriptions.availablePositions;
+	
+		Random rand=new Random();
+		int k=0;
+		//System.out.println("size is"+size);
+		for(int i=0;i<size;i++) {
+			
+			if(availablePositions.size()==0) {
+				for(int j=0;j<n;j++) {
+					availablePositions.add(j);
+				}
+				}
+			k=rand.nextInt(availablePositions.size());
+		       int z=	availablePositions.get(k);
+			if(!output.contains(z))
+			output.add(z);
+			else size++;
+			availablePositions.remove(k);
+			
+			//System.out.println(availablePositions);
+			
 		}
 		
-		Random rand=new Random();
-		int p=n;
-		for(int i=0;i<size;i++) {
-			int k=rand.nextInt(p);
-			output.add(a[k]);
-			a[k]=a[p-1];
-			p--;
-		}
 	}
 	
 }

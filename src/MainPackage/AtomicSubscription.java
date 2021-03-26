@@ -18,3 +18,4 @@ public class AtomicSubscription {
 	}
 	
 }
+//(Field,operator,value)===(city,>=,Iasi)

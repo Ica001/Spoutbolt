@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class GeneratorSubscriptions {
-	
+	static ArrayList<Integer> availablePositions=new ArrayList<Integer>();
 	Random random=new Random();
 	private ArrayList<Requirement> requirements=new ArrayList<Requirement>();
 
@@ -20,6 +20,7 @@ public class GeneratorSubscriptions {
 	}
 	
 	public void  gennerateSubscriptions(int n) {
+		
 		ArrayList<AtomicSubscription> atomicSubscriptionts=new ArrayList<AtomicSubscription>();
 		System.out.println("atomic subscription done!");
 		requirements.forEach(req->{
@@ -62,6 +63,7 @@ public class GeneratorSubscriptions {
 			}
 		}
 		
+		
 	}
 
 	
@@ -70,9 +72,9 @@ public class GeneratorSubscriptions {
 		 int maxfields=GeneratorRandomAtomicSubscription.FIELDS.length-atomicSubscriptionts.size();
 		 int c=0;
 		 if(maxfields!=0)
-		 c=1+random.nextInt(maxfields-1);
-		 // c=random.nextInt(maxfields);
-		 System.out.println("c="+c);
+         c=random.nextInt(maxfields);
+		 /// c=random.nextInt(maxfields);
+		 //System.out.println("c="+c);
 		for (int i=0;i<c;i++) {
 			AtomicSubscription atom=GeneratorRandomAtomicSubscription.generate(atomicSubscriptionts,requirements);
 			//System.out.println("generate..");
